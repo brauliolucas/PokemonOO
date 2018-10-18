@@ -1,8 +1,6 @@
 package pokemonrandombattle;
 
 
-
-
 /**
  * 
  * @author Braulio
@@ -19,8 +17,8 @@ public abstract class Pokemon {
 	private int spDef;
 	private int vel;
 	private int precisao;
-	public Tipo tipo1;
-	public Tipo tipo2;
+	public int tipo1;
+	public int tipo2;
 	public Movimento moves[];
 
 

@@ -1,6 +1,3 @@
-/**
- * @author Braulio
- */
 
 
 
@@ -17,10 +14,11 @@ public class Game {
 	
 	
 	/**
+	 * checa se o hp ï¿½ maior que zero e retorna booleano
 	 * @param1 pokemon1
 	 * @param2 pokemon2
 	 * 
-	 * checa se o hp é maior que zero e retorna booleano
+	 * @return booleano, true se hp maior que 0 e false caso contrario
 	 */
 	public boolean checkHP(Pokemon poke1, Pokemon poke2) {
 		if(poke1.getHp() > 0 && poke2.getHp() > 0) {
@@ -33,9 +31,10 @@ public class Game {
 	
 	
 	/**
+	 * altera o HP depois do calculo de dano
 	 * @param1 quantidade de dano a ser causado
 	 * @param2 pokemon recebera dano
-	 * altera o HP depois do calculo de dano
+	 * 
 	 */
 	public void alteraHP(int dano, Pokemon poke) {
 		poke.setHp((poke.getHp()-dano));
@@ -46,8 +45,10 @@ public class Game {
 	
 	
 	/**
-	 * @param1 pokemon que contem os movimentos
 	 * gera um movimento aleatorio para ser usado
+	 * @param1 pokemon que contem os movimentos
+	 *
+	 *@return retorna um movimento gerado aleatoriamente
 	 */
 	public Movimento geraMovimento(Pokemon poke) {
 		Random gerador = new Random();
@@ -58,9 +59,11 @@ public class Game {
 
 	
 	/**
+	 * batalha randomizada entre pokemons, continua enquanto o HP dos 2 for maior que 0
 	 * @param1	pokemon1
 	 * @param2 	pokemon2
-	 * batalha randomizada entre pokemons, continua enquanto o HP dos 2 for maior que 0
+	 * 
+	 * 
 	 */
 	public void battle(Pokemon poke1, Pokemon poke2) {
 		
@@ -88,10 +91,11 @@ public class Game {
 	
 	
 	/**
-	 * @param1 pokemon que está desferindo ataque
-	 * @param2 pokemon que está recebendo ataque
+	 *calcula o dano entre 2 pokemons utilizando modificadores de vantagem, desvantagem, ataque e defesa e arredonda para int evitando numeros decimais
+	 *@param1 pokemon que estï¿½ desferindo ataque
+	 *@param2 pokemon que estï¿½ recebendo ataque
 	 * 
-	 * @param3 calcula o dano entre 2 pokemons utilizando modificadores de vantagem, desvantagem, ataque e defesa e arredonda para int evitando numeros decimais
+	 *@return retorna dano a ser causado
 	 */
 	
 	public int calculoDano(Pokemon atkr, Pokemon defr) {
@@ -107,8 +111,9 @@ public class Game {
 	
 	
 	/**
-	 * @param1 pokemon
 	 * declara o vencedor da batalha pokemon
+	 * @param1 pokemon
+	 * 
 	 */
 	public void vencedor(Pokemon poke1) {
 		

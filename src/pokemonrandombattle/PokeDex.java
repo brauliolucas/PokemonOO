@@ -5,9 +5,10 @@ public class PokeDex {
 	
 	
 	/**
+	 * imprime as informações do pokemon e movimentos
 	 * @param1 pokemon
 	 * 
-	 *@param2 imprime as informações do pokemon e movimentos
+	 *
 	 */
 	public void showPoke(Pokemon poke) {
 		System.out.println("Nome : " + poke.getNome());
@@ -36,9 +37,10 @@ public class PokeDex {
 	
 	
 	/**
+	 *retorna o nome do tipo do pokemon
 	 *@param1 id do tipo
 	 *
-	 *@return nome do tipo
+	 *@return string com nome do tipo
 	 */
 	
 	public String nomeTipo(int x) {

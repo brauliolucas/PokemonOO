@@ -1,12 +1,6 @@
 package pokemonrandombattle;
 
 
-/**
- * 
- * @author Braulio
- *
- */
-
 public abstract class Pokemon {
 	
 	private String nome;

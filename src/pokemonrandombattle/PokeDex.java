@@ -4,7 +4,11 @@ public class PokeDex {
 	
 	
 	
-	
+	/**
+	 * @param1 pokemon
+	 * 
+	 *@param2 imprime as informações do pokemon e movimentos
+	 */
 	public void showPoke(Pokemon poke) {
 		System.out.println("Nome : " + poke.getNome());
 		System.out.println("HP : " + poke.getHp());
@@ -22,7 +26,7 @@ public class PokeDex {
 				System.out.println("	Nome : " + poke.moves[i].getNome());
 				System.out.println("	Dano Base : " + poke.moves[i].getDanoBase());
 				System.out.println("	Tipo : " + nomeTipo(poke.moves[i].getTipo()));
-				System.out.println("	Precisão : " + poke.moves[i].getPrecisao());
+				System.out.println("	PrecisÃ£o : " + poke.moves[i].getPrecisao());
 			}
 		}
 		
@@ -31,7 +35,11 @@ public class PokeDex {
 	
 	
 	
-	
+	/**
+	 *@param1 id do tipo
+	 *
+	 *@return nome do tipo
+	 */
 	
 	public String nomeTipo(int x) {
 		String Nome;
@@ -69,7 +77,7 @@ public class PokeDex {
 			return Nome;
 		
 		case 9 :
-			Nome = "Aço";
+			Nome = "AÃ§o";
 			return Nome;
 		
 		case 10 :
@@ -77,7 +85,7 @@ public class PokeDex {
 			return Nome;
 			
 		case 11 :
-			Nome = "Água";
+			Nome = "Ã�gua";
 			return Nome;
 		
 		case 12 : 
@@ -97,7 +105,7 @@ public class PokeDex {
 			return Nome;
 			
 		case 16 : 
-			Nome = "Dragão";
+			Nome = "DragÃ£o";
 			return Nome;
 		
 		case 17 : 

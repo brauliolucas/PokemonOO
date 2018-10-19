@@ -16,7 +16,12 @@ public class Game {
 	
 	
 	
-	
+	/**
+	 * @param1 pokemon1
+	 * @param2 pokemon2
+	 * 
+	 * checa se o hp é maior que zero e retorna booleano
+	 */
 	public boolean checkHP(Pokemon poke1, Pokemon poke2) {
 		if(poke1.getHp() > 0 && poke2.getHp() > 0) {
 			return true;
@@ -27,7 +32,11 @@ public class Game {
 	}
 	
 	
-	
+	/**
+	 * @param1 quantidade de dano a ser causado
+	 * @param2 pokemon recebera dano
+	 * altera o HP depois do calculo de dano
+	 */
 	public void alteraHP(int dano, Pokemon poke) {
 		poke.setHp((poke.getHp()-dano));
 	}
@@ -36,6 +45,10 @@ public class Game {
 	
 	
 	
+	/**
+	 * @param1 pokemon que contem os movimentos
+	 * gera um movimento aleatorio para ser usado
+	 */
 	public Movimento geraMovimento(Pokemon poke) {
 		Random gerador = new Random();
 		
@@ -44,6 +57,11 @@ public class Game {
 	}
 
 	
+	/**
+	 * @param1	pokemon1
+	 * @param2 	pokemon2
+	 * batalha randomizada entre pokemons, continua enquanto o HP dos 2 for maior que 0
+	 */
 	public void battle(Pokemon poke1, Pokemon poke2) {
 		
 		
@@ -69,6 +87,12 @@ public class Game {
 	}
 	
 	
+	/**
+	 * @param1 pokemon que está desferindo ataque
+	 * @param2 pokemon que está recebendo ataque
+	 * 
+	 * @param3 calcula o dano entre 2 pokemons utilizando modificadores de vantagem, desvantagem, ataque e defesa e arredonda para int evitando numeros decimais
+	 */
 	
 	public int calculoDano(Pokemon atkr, Pokemon defr) {
 
@@ -82,7 +106,10 @@ public class Game {
 	}
 	
 	
-	
+	/**
+	 * @param1 pokemon
+	 * declara o vencedor da batalha pokemon
+	 */
 	public void vencedor(Pokemon poke1) {
 		
 		

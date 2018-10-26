@@ -1,7 +1,7 @@
 package pokemonrandombattle;
 
 
-public abstract class Pokemon {
+public class Pokemon {
 	
 	private String nome;
 	private int Hp;
@@ -10,10 +10,25 @@ public abstract class Pokemon {
 	private int Def;
 	private int spDef;
 	private int vel;
-	private int precisao;
 	public int tipo1;
 	public int tipo2;
 	public Movimento moves[];
+        private int ID;
+
+      
+    public Pokemon(String nome, int Hp, int Atk, int spAtk, int Def, int spDef, int vel,int tipo1, int tipo2, Movimento[] moves, int ID) {
+        this.nome = nome;
+        this.Hp = Hp;
+        this.Atk = Atk;
+        this.spAtk = spAtk;
+        this.Def = Def;
+        this.spDef = spDef;
+        this.vel = vel;
+        this.tipo1 = tipo1;
+        this.tipo2 = tipo2;
+        this.moves = moves;
+        this.ID = ID;
+    }
 
 
 
@@ -51,9 +66,6 @@ public abstract class Pokemon {
 		return spDef;
 	}
 
-	public int getPrecisao() {
-		return precisao;
-	}
 
 
 

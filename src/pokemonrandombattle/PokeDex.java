@@ -18,7 +18,6 @@ public class PokeDex {
 		System.out.println("Def : " + poke.getDef());
 		System.out.println("spDef : " + poke.getSpDef());
 		System.out.println("Vel : " + poke.getVel());
-		System.out.println("Precisao : " + poke.getPrecisao());
 		System.out.println("Tipo 1 : " + nomeTipo(poke.tipo1));
 		System.out.println("Tipo 2 : " + nomeTipo(poke.tipo2));
 		System.out.println("Movimentos ");
@@ -27,7 +26,7 @@ public class PokeDex {
 				System.out.println("	Nome : " + poke.moves[i].getNome());
 				System.out.println("	Dano Base : " + poke.moves[i].getDanoBase());
 				System.out.println("	Tipo : " + nomeTipo(poke.moves[i].getTipo()));
-				System.out.println("	PrecisÃ£o : " + poke.moves[i].getPrecisao());
+				System.out.println("	Precisão : " + poke.moves[i].getPrecisao());
 			}
 		}
 		
@@ -79,7 +78,7 @@ public class PokeDex {
 			return Nome;
 		
 		case 9 :
-			Nome = "AÃ§o";
+			Nome = "Aço";
 			return Nome;
 		
 		case 10 :
@@ -87,7 +86,7 @@ public class PokeDex {
 			return Nome;
 			
 		case 11 :
-			Nome = "Ã�gua";
+			Nome = "Água";
 			return Nome;
 		
 		case 12 : 
@@ -107,7 +106,7 @@ public class PokeDex {
 			return Nome;
 			
 		case 16 : 
-			Nome = "DragÃ£o";
+			Nome = "Dragão";
 			return Nome;
 		
 		case 17 : 

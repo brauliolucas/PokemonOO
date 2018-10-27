@@ -18,8 +18,8 @@ public class PokeDex {
 		System.out.println("Def : " + poke.getDef());
 		System.out.println("spDef : " + poke.getSpDef());
 		System.out.println("Vel : " + poke.getVel());
-		System.out.println("Tipo 1 : " + nomeTipo(poke.tipo1));
-		System.out.println("Tipo 2 : " + nomeTipo(poke.tipo2));
+		System.out.println("Tipo 1 : " + nomeTipo(poke.tipo1.getID));
+		System.out.println("Tipo 2 : " + nomeTipo(poke.tipo2.getID));
 		System.out.println("Movimentos ");
 		for(int i=0;i<4;i++) {
 			if(poke.moves[i]!= null) {
@@ -86,7 +86,7 @@ public class PokeDex {
 			return Nome;
 			
 		case 11 :
-			Nome = "Ãgua";
+			Nome = "Água";
 			return Nome;
 		
 		case 12 : 

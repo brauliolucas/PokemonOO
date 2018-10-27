@@ -103,7 +103,7 @@ public class Game {
 		
 		Movimento move = geraMovimento(atkr);
 		int dano;
-		dano = (int) Math.floor(((move.getDanoBase()*(atkr.getAtk()/defr.getDef())/50)+2)*(Tipo.tipo[move.getTipo()][defr.tipo1])*(Tipo.tipo[move.getTipo()][defr.tipo2]));
+		dano = (int) Math.floor(((move.getDanoBase()*(atkr.getAtk()/defr.getDef())/50)+2)*(defr.tipo1.fraquezas[move.getTipo]*defr.tipo2.fraquezas[move.getTipo]));
 		
 		
 		return dano;

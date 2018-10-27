@@ -10,8 +10,8 @@ public class Pokemon {
 	private int Def;
 	private int spDef;
 	private int vel;
-	public int tipo1;
-	public int tipo2;
+	public Tipo tipo1;
+	public Tipo tipo2;
 	public Movimento moves[];
         private int ID;
 

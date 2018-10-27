@@ -1,5 +1,4 @@
 # PokemonOO
-projeto pokemon
 
 1.	Descrição
 O programa consiste em mostrar uma lista de pokemons da primeira geração e suas características, como nome, tipo e atributos de batalha. Além disso, ele gera batalhas aleatórias entre os pokemons e permite sua evolução, de acordo com o número de batalhas vencidas.

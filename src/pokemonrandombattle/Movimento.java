@@ -57,7 +57,10 @@ public class Movimento {
 	}
 	
 	
-	
+	public int executeMove(Movimento move, Pokemon atkr, Pokemon defr) {
+		int dano = (int) Math.floor(((move.getDanoBase()*(atkr.getAtk()/defr.getDef())/50)+2)*(defr.tipo1.fraquezas[move.getTipo()]*defr.tipo2.fraquezas[move.getTipo()]));
+		return dano;
+	}
 	
 	
 }

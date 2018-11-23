@@ -1,15 +1,22 @@
 package pokemonrandombattle;
 
-public class Debuff extends Movimento {
+public abstract class Debuff extends Movimento {
+	private int Escalar;
+	public int getEscalar() {
+		return Escalar;
+	}
 
-	public Debuff(int precisao, int danoBase, String nome, int tipo, boolean moveFisico) {
+
+	public void setEscalar(int escalar) {
+		Escalar = escalar;
+	}
+
+
+	public Debuff(int precisao, int danoBase, String nome, int tipo, boolean moveFisico, int Escalar) {
 		super(precisao, danoBase, nome, tipo, moveFisico);
 		// TODO Auto-generated constructor stub
 	}
-	private int Escalar;
 	
-	public int executeMove(Movimento move, Pokemon atkr, Pokemon defr) {
-		int dano = (int) Math.floor(((move.getDanoBase()*(atkr.getAtk()/defr.getDef())/50)+2)*(defr.tipo1.fraquezas[move.getTipo()]*defr.tipo2.fraquezas[move.getTipo()]));
-		return dano;
-	}
+	
+	public abstract int executeMove(Movimento move, Pokemon atkr, Pokemon defr);
 }

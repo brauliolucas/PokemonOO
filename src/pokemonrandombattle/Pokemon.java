@@ -16,7 +16,7 @@ public class Pokemon {
         private int ID;
 
       
-    public Pokemon(String nome, int Hp, int Atk, int spAtk, int Def, int spDef, int vel,int tipo1, int tipo2, Movimento[] moves, int ID) {
+    public Pokemon(String nome, int Hp, int Atk, int spAtk, int Def, int spDef, int vel,Tipo tipo1, Tipo tipo2, Movimento[] moves, int ID) {
         this.nome = nome;
         this.Hp = Hp;
         this.Atk = Atk;

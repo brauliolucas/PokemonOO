@@ -1,0 +1,1 @@
+pokemonrandomizerbattle.ManipuladorDeArquivos

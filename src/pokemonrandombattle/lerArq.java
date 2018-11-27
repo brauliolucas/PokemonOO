@@ -30,8 +30,8 @@ public class lerArq {
             int def = input.nextInt();
             int spdef = input.nextInt();
             int vel = input.nextInt();
-            Tipo tipo1 = input.next();
-            Tipo tipo2 = input.nex();
+            int tipo1 = input.nextInt();
+            int tipo2 = input.nextInt();
             Movimento moves [] = null;
 
             for (int i = 0; i < 4; i++) {

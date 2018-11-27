@@ -69,6 +69,41 @@ public class Pokemon {
 
 
 
+	public void setAtk(int atk) {
+		Atk = atk;
+	}
+
+
+
+
+	public void setSpAtk(int spAtk) {
+		this.spAtk = spAtk;
+	}
+
+
+
+
+	public void setDef(int def) {
+		Def = def;
+	}
+
+
+
+
+	public void setSpDef(int spDef) {
+		this.spDef = spDef;
+	}
+
+
+
+
+	public void setVel(int vel) {
+		this.vel = vel;
+	}
+
+
+
+
 	
 	
 	

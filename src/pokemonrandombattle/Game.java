@@ -4,7 +4,6 @@
 package pokemonrandombattle;
 
 import java.util.Random;
-import javax.swing.JOptionPane;
 
 public class Game {
 	Pokemon poke1;
@@ -21,8 +20,6 @@ public class Game {
 	 * 
 	 * @return booleano, true se hp maior que 0 e false caso contrario
 	 */
-        
-        
 	public boolean checkHP(Pokemon poke1, Pokemon poke2) {
 		if(poke1.getHp() > 0 && poke2.getHp() > 0) {
 			return true;
@@ -57,7 +54,7 @@ public class Game {
 		Random gerador = new Random();
 		
 		
-		return poke.moves[gerador.nextInt(4)];
+		return poke.moves[gerador.nextInt(5)];
 	}
 
 	
@@ -80,7 +77,7 @@ public class Game {
 					break;
 				}
 				alteraHP(calculoDano(poke2,poke1),poke1);
-                                if(!checkHP(poke1,poke2)) {
+				if(!checkHP(poke1,poke2)) {
 					vencedor(poke1);
 					break;
 				}
@@ -92,8 +89,8 @@ public class Game {
 					break;
 				}
 				alteraHP(calculoDano(poke1,poke2),poke2);
-                                if(!checkHP(poke1,poke2)) {
-					vencedor(poke2);
+				if(!checkHP(poke1,poke2)) {
+					vencedor(poke1);
 					break;
 				}
 			}
@@ -115,12 +112,12 @@ public class Game {
 
 		
 		Movimento move = geraMovimento(atkr);
-                System.out.println("Movimento: " + move.getNome());
 		int dano;
 		
 		dano = move.executeMove(move, atkr, defr);
+		System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+		System.out.println("Causou : " + dano +  " de dano em " + defr.getNome());
 		
-                System.out.println( "Dano: " + dano + "Atk: " + atkr.getNome());
 		return dano;
 	}
 	
@@ -133,7 +130,7 @@ public class Game {
 	public void vencedor(Pokemon poke1) {
 		
 		
-		System.out.println("Vencedor: " + poke1.getNome());
+		System.out.println("O vencedor foi : " + poke1.getNome());
 		
 		
 		

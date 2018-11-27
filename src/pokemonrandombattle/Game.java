@@ -9,10 +9,6 @@ public class Game {
 	Pokemon poke1;
 	Pokemon poke2;
 	
-	
-	
-	
-	
 	/**
 	 * checa se o hp � maior que zero e retorna booleano
 	 * @param1 pokemon1
@@ -39,11 +35,7 @@ public class Game {
 	public void alteraHP(int dano, Pokemon poke) {
 		poke.setHp((poke.getHp()-dano));
 	}
-	
-	
-	
-	
-	
+
 	/**
 	 * gera um movimento aleatorio para ser usado
 	 * @param1 pokemon que contem os movimentos
@@ -52,12 +44,31 @@ public class Game {
 	 */
 	public Movimento geraMovimento(Pokemon poke) {
 		Random gerador = new Random();
-		
-		
-		return poke.moves[gerador.nextInt(5)];
+		return poke.moves[gerador.nextInt(4)];
 	}
 
+	/**
+	 *calcula o dano entre 2 pokemons utilizando modificadores de vantagem, desvantagem, ataque e defesa e arredonda para int evitando numeros decimais
+	 *@param1 pokemon que est� desferindo ataque
+	 *@param2 pokemon que est� recebendo ataque
+	 * 
+	 *@return retorna dano a ser causado
+	 */
 	
+	public int calculoDano(Pokemon atkr, Pokemon defr) {
+
+		
+		Movimento move = geraMovimento(atkr);
+		int dano;
+		
+		dano = move.executeMove(move, atkr, defr);
+		System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+		System.out.println("Causou : " + dano +  " de dano em " + defr.getNome());
+		
+		return dano;
+	}
+        
+        
 	/**
 	 * batalha randomizada entre pokemons, continua enquanto o HP dos 2 for maior que 0
 	 * @param1	pokemon1
@@ -66,9 +77,6 @@ public class Game {
 	 * 
 	 */
 	public void battle(Pokemon poke1, Pokemon poke2) {
-		
-		
-		
 		while(checkHP(poke1,poke2)) {
 			if(poke1.getVel() > poke2.getVel()) {
 				alteraHP(calculoDano(poke1,poke2),poke2);
@@ -99,42 +107,13 @@ public class Game {
 		
 	}
 	
-	
-	/**
-	 *calcula o dano entre 2 pokemons utilizando modificadores de vantagem, desvantagem, ataque e defesa e arredonda para int evitando numeros decimais
-	 *@param1 pokemon que est� desferindo ataque
-	 *@param2 pokemon que est� recebendo ataque
-	 * 
-	 *@return retorna dano a ser causado
-	 */
-	
-	public int calculoDano(Pokemon atkr, Pokemon defr) {
-
-		
-		Movimento move = geraMovimento(atkr);
-		int dano;
-		
-		dano = move.executeMove(move, atkr, defr);
-		System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
-		System.out.println("Causou : " + dano +  " de dano em " + defr.getNome());
-		
-		return dano;
-	}
-	
-	
 	/**
 	 * declara o vencedor da batalha pokemon
 	 * @param1 pokemon
 	 * 
 	 */
 	public void vencedor(Pokemon poke1) {
-		
-		
 		System.out.println("O vencedor foi : " + poke1.getNome());
-		
-		
-		
-		
 	}
 	
 	

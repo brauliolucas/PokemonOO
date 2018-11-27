@@ -1,11 +1,13 @@
 package pokemonrandombattle;
 
+import java.io.Serializable;
+
 
 //1-Normal; 2-Fight; 3-Voador; 4-Veneno; 5-Terrestre; 6-Rocha; 7-Inseto; 8-Fantasma;
 //9-AÃ§o; 10-Fogo; 11-Ã�gua; 12-Grama; 13-Eletrico; 14-Psiquico; 15-Gelo; 16-Dragao; 
 //17-Noturno; 18-Fada
 
-public class Tipo {
+public class Tipo implements Serializable{
 	
 	
 	 double fraquezas[];

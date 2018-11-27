@@ -1,7 +1,10 @@
 package pokemonrandombattle;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 
-public class Pokemon {
+
+public class Pokemon implements Serializable{
 	
 	private String nome;
 	private int Hp;
@@ -16,19 +19,25 @@ public class Pokemon {
         private int ID;
 
       
-    public Pokemon(String nome, int Hp, int Atk, int spAtk, int Def, int spDef, int vel,Tipo tipo1, Tipo tipo2, Movimento[] moves, int ID) {
-        this.nome = nome;
-        this.Hp = Hp;
-        this.Atk = Atk;
-        this.spAtk = spAtk;
-        this.Def = Def;
-        this.spDef = spDef;
-        this.vel = vel;
-        this.tipo1 = tipo1;
-        this.tipo2 = tipo2;
-        this.moves = moves;
+    public Pokemon(String dadosPoke[], int ID) {
+        System.out.println(dadosPoke[0]);
+        nome = dadosPoke[0];
+        moves = new Movimento[4];
+        
+        Hp = ManipuladorDeArquivos.strToInt(dadosPoke[1],nome);
+        Atk = ManipuladorDeArquivos.strToInt(dadosPoke[2],nome);
+        Def = ManipuladorDeArquivos.strToInt(dadosPoke[3],nome);
+        spAtk = ManipuladorDeArquivos.strToInt(dadosPoke[4],nome);
+        spDef = ManipuladorDeArquivos.strToInt(dadosPoke[5],nome);
+        vel = ManipuladorDeArquivos.strToInt(dadosPoke[6],nome);
+        for(int i = 0; i<4;i++){
+            moves[i] = new Movimento(0);
+        }
+        tipo1 = new Tipo(ManipuladorDeArquivos.strToInt(dadosPoke[11],nome));
+        tipo2 = new Tipo(ManipuladorDeArquivos.strToInt(dadosPoke[12],nome));
         this.ID = ID;
     }
+
 
 
 	public int getHp() {

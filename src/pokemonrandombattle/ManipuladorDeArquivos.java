@@ -1,5 +1,5 @@
 
-package pokemonrandomizerbattle;
+package pokemonrandombattle;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,8 +17,14 @@ import java.util.ArrayList;
  * @author ice
  */
 public abstract class ManipuladorDeArquivos {
-    
-public ArrayList getArrayListDeBinario() throws IOException, ClassNotFoundException{
+
+/**
+ * Pega o ArrayList de dentro de um arquivo binario contendo todos os pokemons.
+ * @return pokemons
+ * @throws IOException
+ * @throws ClassNotFoundException 
+ */
+public static ArrayList getArrayListDeBinario() throws IOException, ClassNotFoundException{
     ArrayList<Pokemon> pokemons = null;
     try {
         
@@ -29,7 +35,19 @@ public ArrayList getArrayListDeBinario() throws IOException, ClassNotFoundExcept
         binario.close();
         
     } catch (FileNotFoundException e){
+        System.out.println("Erro! "+e.getMessage()+" Verificando existencia de arquivo csv do banco de dados. ");
         converterCSVEmBinario();
+        try{
+           FileInputStream ios = new FileInputStream("DataBase.bin");
+           ObjectInputStream binario = new ObjectInputStream(ios);
+           pokemons = (ArrayList<Pokemon>) binario.readObject();
+           ios.close();
+           binario.close();
+           } catch(FileNotFoundException x){
+               System.out.println("Nao localizado arquivo do banco de dados em nenhum formato valido.");
+           }
+        
+        
     } finally{
         
         return pokemons;
@@ -39,49 +57,61 @@ public ArrayList getArrayListDeBinario() throws IOException, ClassNotFoundExcept
     
 }
 
-public void converterCSVEmBinario() throws IOException  {
+/**
+ * Cria um arquivo binario, que contem o ArrayList de Pokemons, a partir de um arquivo csv
+ * @throws IOException 
+ */
+public static void converterCSVEmBinario() throws IOException  {
     
     String arquivoCSV = "DataBase.csv";
-    BufferedReader dataBase = null;
-    String linha = "";
-    dataBase.readLine();
-    File arquivoBin = new File("DataBase.bin");
-    ObjectOutputStream arquivoBinario = new ObjectOutputStream(new FileOutputStream(arquivoBin));
+    
+    
+    
+    
     
     try {
         
         ArrayList<Pokemon> arrayPokemons = new ArrayList();
-        dataBase = new BufferedReader(new FileReader(arquivoCSV));
-        
+        BufferedReader dataBase = new BufferedReader(new FileReader(arquivoCSV));
+        String linha = "";
+        dataBase.readLine();
+        int id = 1;
         while ((linha = dataBase.readLine()) != null) {
             
             
             String[] dadosPokemon = linha.split(";");
-            ArrayList dadosInt = new ArrayList();
-            for(int i = 1; i<13;i++){
-                dadosInt.add(Integer.parseInt(dadosPokemon[i])); 
-            }
-            Pokemon poke = new Pokemon(dadosPokemon[0],dadosInt);
+            Pokemon poke = new Pokemon(dadosPokemon, id);
             arrayPokemons.add(poke);
-            
+            id++;
 
         }
+        File arquivoBin = new File("DataBase.bin");
+        ObjectOutputStream arquivoBinario = new ObjectOutputStream(new FileOutputStream(arquivoBin));
         arquivoBinario.writeObject(arrayPokemons);
         arquivoBinario.flush();
-        
+        dataBase.close();
+        arquivoBinario.close();
         
     } catch (FileNotFoundException e) {
         System.out.println("Erro! "+e.getMessage());
-    } finally {
-        if (dataBase != null) {
-            try {
-                dataBase.close();
-                arquivoBinario.close();
-            } catch (IOException e) {
-                System.out.println("Erro! "+e.getMessage());
-            }
-        }
-    }
+    } 
+}
+
+/**
+ * Converte os valores do CSV, que vem em string, para int
+ * @param valor valor a se converter em int
+ * @param nome nome do pokemon em que houve erro na conversao de algum atributo
+ * @return 
+ */
+public static int strToInt(String valor, String nome) 
+{
+   try {
+       return Integer.valueOf(valor); 
+   } 
+   catch (NumberFormatException e) {
+       System.out.println("Erro! "+e.getMessage()+" nao foi possivel converter "+valor+"  em numero.Pokemon eh "+nome);
+       return 0;
+   }
 }
 }
 

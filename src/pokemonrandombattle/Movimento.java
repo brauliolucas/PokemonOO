@@ -3,7 +3,9 @@
 
 package pokemonrandombattle;
 
-public class Movimento {
+import java.io.Serializable;
+
+public class Movimento implements Serializable{
 	private int precisao;
 	private int danoBase;
 	private String nome;
@@ -19,12 +21,12 @@ public class Movimento {
 		return tipo;
 	}
 	
-	public Movimento(int precisao, int danoBase, String nome, int tipo, boolean moveFisico) {
-        this.precisao = precisao;
-        this.danoBase = danoBase;
-        this.nome = nome;
-        this.tipo = tipo;
-        this.moveFisico = moveFisico;
+	public Movimento(int x) {
+        precisao = 100;
+        nome = "Choque";
+        danoBase = 100;
+        tipo = 8;
+        moveFisico = false;
     }
 
 	public int getPrecisao() {

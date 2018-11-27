@@ -57,7 +57,6 @@ public class Game {
 	
 	public int calculoDano(Pokemon atkr, Pokemon defr) {
 
-		
 		Movimento move = geraMovimento(atkr);
 		int dano;
 		
@@ -99,6 +98,7 @@ public class Game {
 				alteraHP(calculoDano(poke1,poke2),poke2);
 				if(!checkHP(poke1,poke2)) {
 					vencedor(poke1);
+                                        status(poke1);
 					break;
 				}
 			}
@@ -115,22 +115,11 @@ public class Game {
 	public void vencedor(Pokemon poke1) {
 		System.out.println("O vencedor foi : " + poke1.getNome());
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/**
+         * Status do HP após batalha
+         * @param poke 
+         */
+        public void status(Pokemon poke){
+            System.out.println("HP: " + poke.getHp());
+        }
 }

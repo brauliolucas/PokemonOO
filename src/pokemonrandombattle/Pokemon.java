@@ -31,8 +31,6 @@ public class Pokemon {
     }
 
 
-
-
 	public int getHp() {
 		return Hp;
 	}
@@ -66,36 +64,21 @@ public class Pokemon {
 		return spDef;
 	}
 
-
-
-
 	public void setAtk(int atk) {
 		Atk = atk;
 	}
-
-
-
 
 	public void setSpAtk(int spAtk) {
 		this.spAtk = spAtk;
 	}
 
-
-
-
 	public void setDef(int def) {
 		Def = def;
 	}
 
-
-
-
 	public void setSpDef(int spDef) {
 		this.spDef = spDef;
 	}
-
-
-
 
 	public void setVel(int vel) {
 		this.vel = vel;

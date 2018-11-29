@@ -1,7 +1,6 @@
 package pokemonrandombattle;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 
 public class Pokemon implements Serializable{
@@ -16,11 +15,9 @@ public class Pokemon implements Serializable{
 	public Tipo tipo1;
 	public Tipo tipo2;
 	public Movimento moves[];
-        private int ID;
+    private int ID;
 
-      
     public Pokemon(String dadosPoke[], int ID) {
-        System.out.println(dadosPoke[0]);
         nome = dadosPoke[0];
         moves = new Movimento[4];
         
@@ -31,7 +28,9 @@ public class Pokemon implements Serializable{
         spDef = ManipuladorDeArquivos.strToInt(dadosPoke[5],nome);
         vel = ManipuladorDeArquivos.strToInt(dadosPoke[6],nome);
         for(int i = 0; i<4;i++){
-            moves[i] = new Movimento(0);
+        	int idMove = ManipuladorDeArquivos.strToInt(dadosPoke[7 + i],nome);
+        	System.out.println(nome + " " + idMove);
+            moves[i] = Dados.movimentos.get(idMove-1);
         }
         tipo1 = new Tipo(ManipuladorDeArquivos.strToInt(dadosPoke[11],nome));
         tipo2 = new Tipo(ManipuladorDeArquivos.strToInt(dadosPoke[12],nome));

@@ -6,11 +6,10 @@ package pokemonrandombattle;
 import java.io.Serializable;
 
 public class Movimento implements Serializable{
-	private int precisao;
-	private int danoBase;
 	private String nome;
+	private int ID;
+	private int danoBase;
 	private int tipo;
-	private boolean moveFisico;
 	
 	
     public int getDanoBase() {
@@ -21,24 +20,19 @@ public class Movimento implements Serializable{
 		return tipo;
 	}
 	
-	public Movimento(int x) {
-        precisao = 100;
-        nome = "Choque";
-        danoBase = 100;
-        tipo = 8;
-        moveFisico = false;
-    }
-
-	public int getPrecisao() {
-		return precisao;
+	public int getId() {
+		return ID;
 	}
+	
+	public Movimento(String[] dadosMovimento) {
+        nome = dadosMovimento[0];
+        ID = ManipuladorDeArquivos.strToInt(dadosMovimento[1], nome);
+        danoBase = ManipuladorDeArquivos.strToInt(dadosMovimento[2], nome);
+        tipo = ManipuladorDeArquivos.strToInt(dadosMovimento[3], nome);
+    }
 
 	public String getNome() {
 		return nome;
-	}
-
-	public boolean isMoveFisico() {
-		return moveFisico;
 	}
 	
 	/**

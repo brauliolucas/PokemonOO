@@ -10,7 +10,7 @@ public class PokeDex {
 	 * 
 	 *
 	 */
-	public void showPoke(Pokemon poke) {
+	public static void showPoke(Pokemon poke) {
 		System.out.println("Nome : " + poke.getNome());
 		System.out.println("HP : " + poke.getHp());
 		System.out.println("Atk : " + poke.getAtk());
@@ -26,7 +26,7 @@ public class PokeDex {
 				System.out.println("	Nome : " + poke.moves[i].getNome());
 				System.out.println("	Dano Base : " + poke.moves[i].getDanoBase());
 				System.out.println("	Tipo : " + poke.moves[i].getTipo());
-				System.out.println("	Precisão : " + poke.moves[i].getPrecisao());
+				System.out.println("");
 			}
 		}
 		

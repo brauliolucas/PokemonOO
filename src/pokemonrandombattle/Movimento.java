@@ -10,7 +10,7 @@ public class Movimento implements Serializable{
 	private int ID;
 	private int danoBase;
 	private int tipo;
-	
+	private int classe;
 	
     public int getDanoBase() {
 		return danoBase;
@@ -29,6 +29,8 @@ public class Movimento implements Serializable{
         ID = ManipuladorDeArquivos.strToInt(dadosMovimento[1], nome);
         danoBase = ManipuladorDeArquivos.strToInt(dadosMovimento[2], nome);
         tipo = ManipuladorDeArquivos.strToInt(dadosMovimento[3], nome);
+        classe = ManipuladorDeArquivos.strToInt(dadosMovimento[4], nome);
+        
     }
 
 	public String getNome() {
@@ -46,6 +48,11 @@ public class Movimento implements Serializable{
 		int dano = (int) Math.floor(((move.getDanoBase()*(atkr.getAtk()/defr.getDef())/50)+2)*(defr.tipo1.fraquezas[move.getTipo()]*defr.tipo2.fraquezas[move.getTipo()]));
 		return dano;
 	}
+
+	public int getClasse() {
+		return classe;
+	}
+	
 	
 	
 }

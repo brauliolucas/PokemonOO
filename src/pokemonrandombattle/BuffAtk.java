@@ -1,19 +1,22 @@
 package pokemonrandombattle;
 
-public class BuffAtk extends Buff {
+public class BuffAtk extends Movimento {
 
-	public BuffAtk(int precisao, int danoBase, String nome, int tipo, boolean moveFisico, int Escalar) {
-		super(precisao, danoBase, nome, tipo, moveFisico, Escalar);
+	public BuffAtk(String[] dadosMovimento) {
+		super(dadosMovimento);
 		// TODO Auto-generated constructor stub
 	}
-
+	/*
+	 * execute um Buff no Atk do pokemon atacante
+	 * @param1 movimento
+	 * @param2 pokemon atacante
+	 * @param3 pokemon defendendo
+	 * @return 0
+	 */
 	@Override
 	public int executeMove(Movimento move, Pokemon atkr, Pokemon defr) {
-		int dano = (int) Math.floor(((move.getDanoBase()*(atkr.getAtk()/defr.getDef())/50)+2)*(defr.tipo1.fraquezas[move.getTipo()]*defr.tipo2.fraquezas[move.getTipo()]));
-		atkr.setAtk(atkr.getAtk()*getEscalar());
-		return dano;
+		atkr.setAtk(atkr.getAtk()*move.getDanoBase());
+		return 0;
 	}
-
-
 
 }

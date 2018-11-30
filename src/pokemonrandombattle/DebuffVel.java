@@ -1,15 +1,21 @@
 package pokemonrandombattle;
 
-public class DebuffVel extends Debuff {
+public class DebuffVel extends Movimento {
 
-	public DebuffVel(int precisao, int danoBase, String nome, int tipo, boolean moveFisico, int Escalar) {
-		super(precisao, danoBase, nome, tipo, moveFisico, Escalar);
+	public DebuffVel(String[] dadosMovimento) {
+		super(dadosMovimento);
 		// TODO Auto-generated constructor stub
 	}
-
+	/*
+	 * execute um DeBuff no Vel do pokemon defendendo
+	 * @param1 movimento
+	 * @param2 pokemon atacante
+	 * @param3 pokemon defendendo
+	 * @return 0
+	 */
 	@Override
 	public int executeMove(Movimento move, Pokemon atkr, Pokemon defr) {
-		// TODO Auto-generated method stub
+		defr.setAtk(defr.getAtk()/move.getDanoBase());
 		return 0;
 	}
 

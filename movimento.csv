@@ -1,96 +1,96 @@
-Nome	ID	danoBase	Tipo			
-Choque do Trov„o	1	90	8			
-Explos„o Focada	2	120	3			
-Retorno	3	100	1			
-Soco de Gelo	4	75	12			
-Avalanche	5	60	12			
-Bico de Broca	6	80	5			
-L‚mina de Pedra	7	100	11			
-Bola Sombria	8	80	15			
-Picada Venenosa	9	15	7			
-Quebra-Telhas	10	75	3			
-CabeÁada Zen	11	80	10			
-Endurecer	12	1	1			
-Pulso Noturno	13	80	16			
-Atacar2	14	45	1			
-Serpentear	15	1	7			
-Aninhar	16	50	5			
-Mordida	17	60	16			
-Rabo de Ferro	18	100	17			
-ExecuÁ„o de Broca	19	80	9			
-Mente Calma	20	1	10			
-Cachoeira	21	80	4			
-Asa de AÁo	22	70	17			
-Explos„o Lunar	23	95	18			
-Tesoura-X	24	80	13			
-Õmpeto do Drag„o	25	100	14			
-Feixe de Sinal	26	75	13			
-Hiper Voz	27	90	1			
-Raio Solar	28	120	6			
-DanÁa das Penas	29	-2	5			
-Atacar	30	40	1			
-Meio-cozido	31	-50	1			
-Eletroteia	32	55	8			
-Mordida do Besouro	33	60	13			
-Investida de Labaredas	34	120	2			
-Triturar	35	80	16			
-Ronco	36	50	1			
-Bomba de Lodo	37	90	7			
-Combate PrÛximo	38	120	3			
-Hidro Bomba	39	110	4			
-Bombar	40	1	3			
-Deslize de Rochas	41	75	11			
-Tiro de Gosma	42	120	7			
-P·ssaro Valente	43	120	5			
-Agilidade	44	2	10			
-Tapa de Acordar	45	70	3			
-Bola de Energia	46	90	6			
-Superpoder	47	120	3			
-Trama Desagrad·vel	48	2	16			
-Furac„o	49	110	5			
-Garra Sombria	50	70	15			
-Soco de Fogo	51	75	2			
-Surfar	52	95	4			
-Rajada de Gelo	53	95	12			
-Extrasensorial	54	80	10			
-DanÁa das Espadas	55	2	1			
-Ultraje	56	120	14			
-Amnesia	57	2	10			
-Crescimento	58	2	1			
-Explos„o de Fogo	59	110	2			
-Pulso do Drag„o	60	85	14			
-Bomba de Sementes	61	80	3			
-DanÁa Agitada	62	1	13			
-Zumbido do Besouro	63	90	13			
-PsÌquico	64	90	10			
-Tiro de Fios	65	-1	13			
-Jab Venenoso	66	80	7			
-Onda de Calor	67	95	2			
-Terremoto	68	100	9			
-Sol da Manh„	69	50	1			
-Cintilar Deslumbrante	70	80	18			
-PreparaÁ„o	71	1	6			
-Recuperar	72	50	1			
-Esfera de Aura	73	80	3			
-Polir Rocha	74	2	11			
-BraÁo de Martelo	75	100	3			
-Rabo de ¡gua	76	90	4			
-Canh„o de Flash	77	80	17			
-Chute Voador	78	100	3			
-Estocar	79	1	1			
-Defesa de Ferro	80	2	1			
-Ataque Repentino	81	60	1			
-Soco de Trov„o	82	75	8			
-Mega Chute	83	120	1			
-Megachifre	84	120	13			
-FotossÌntese	85	-50	6			
-¡s dos Ares	86	60	5			
-Corte Cruzado	87	100	3			
-Poder Oculto Fogo	88	60	2			
-Atacar3	89	50	1			
-Celebrar	90	1	1			
-DanÁa do Drag„o	91	1	14			
-Evoboost Extremo	92	2	1			
-Tri-Ataque	93	80	1			
-Poder Ancestral	94	60	11			
-Liquidar	95	85	4			
+ÔªøNome;ID;danoBase;Tipo;Classe
+Choque do Trov√£o;1;90;8;1
+Explos√£o Focada;2;120;3;1
+Retorno;3;100;1;1
+Soco de Gelo;4;75;12;1
+Avalanche;5;60;12;1
+Bico de Broca;6;80;5;1
+L√¢mina de Pedra;7;100;11;1
+Bola Sombria;8;80;15;1
+Picada Venenosa;9;15;7;1
+Quebra-Telhas;10;75;3;1
+Cabe√ßada Zen;11;80;10;1
+Endurecer;12;2;1;5
+Pulso Noturno;13;80;16;1
+Atacar 2 ;14;45;16;1
+Serpentear;15;2;7;3
+Aninhar;16;50;5;2
+Mordida;17;60;16;1
+Rabo de Ferro;18;100;17;1
+Execu√ß√£o de Broca;19;80;9;1
+Mente Calma;20;2;10;8
+Cachoeira;21;80;4;1
+Asa de A√ßo;22;70;17;1
+Explos√£o Lunar;23;95;18;1
+Tesoura-X;24;80;13;1
+√çmpeto do Drag√£o;25;100;14;1
+Feixe de Sinal;26;75;13;1
+Hiper Voz;27;90;1;1
+Raio Solar;28;120;6;1
+Dan√ßa das Penas;29;3;5;8
+Atacar;30;40;1;1
+Meio-cozido;31;50;1;2
+Eletroteia;32;55;8;1
+Mordida do Besouro;33;60;13;1
+Investida de Labaredas;34;120;2;1
+Triturar;35;80;16;1
+Ronco;36;50;1;1
+Bomba de Lodo;37;90;7;1
+Combate Pr√≥ximo;38;120;3;1
+Hidro Bomba;39;110;4;1
+Bombar;40;1;3;3
+Deslize de Rochas;41;75;11;1
+Tiro de Gosma;42;120;7;1
+P√°ssaro Valente;43;120;5;1
+Agilidade;44;3;10;7
+Tapa de Acordar;45;70;3;1
+Bola de Energia;46;90;6;1
+Superpoder;47;120;3;1
+Trama Desagrad√°vel;48;3;16;4
+Furac√£o;49;110;5;1
+Garra Sombria;50;70;15;1
+Soco de Fogo;51;75;2;1
+Surfar;52;95;4;1
+Rajada de Gelo;53;95;12;1
+Extrasensorial;54;80;10;1
+Dan√ßa das Espadas;55;3;1;3
+Ultraje;56;120;14;1
+Amnesia;57;3;10;6
+Crescimento;58;3;1;4
+Explos√£o de Fogo;59;110;2;1
+Pulso do Drag√£o;60;85;14;1
+Bomba de Sementes;61;80;3;1
+Dan√ßa Agitada;62;2;13;6
+Zumbido do Besouro;63;90;13;1
+Ps√≠quico;64;90;10;1
+Tiro de Fios;65;2;13;9
+Jab Venenoso;66;80;7;1
+Onda de Calor;67;95;2;1
+Terremoto;68;100;9;1
+Sol da Manh√£;69;50;1;2
+Cintilar Deslumbrante;70;80;18;1
+Prepara√ß√£o;71;2;6;3
+Recuperar;72;50;1;2
+Esfera de Aura;73;80;3;1
+Polir Rocha;74;3;11;7
+Bra√ßo de Martelo;75;100;3;1
+Rabo de √Ågua;76;90;4;1
+Canh√£o de Flash;77;80;17;1
+Chute Voador;78;100;3;1
+Estocar;79;2;1;5
+Defesa de Ferro;80;3;1;5
+Ataque Repentino;81;60;1;1
+Soco de Trov√£o;82;75;8;1
+Mega Chute;83;120;1;1
+Megachifre;84;120;13;1
+Fotoss√≠ntese;85;50;6;2
+√Ås dos Ares;86;60;5;1
+Corte Cruzado;87;100;3;1
+Poder Oculto Fogo;88;60;2;1
+Atacar 3;89;45;2;1
+Celebrar;90;2;1;3
+Dan√ßa do Drag√£o;91;3;14;7
+Evoboost Extremo;92;3;1;7
+Tri-Ataque;93;80;1;1
+Poder Ancestral;94;60;11;1
+Liquidar;95;85;4;1

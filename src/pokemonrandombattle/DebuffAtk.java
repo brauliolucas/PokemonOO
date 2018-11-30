@@ -2,9 +2,9 @@ package pokemonrandombattle;
 
 public class DebuffAtk extends Movimento {
 
-	public DebuffAtk(String[] dadosMovimento) {
-		super(dadosMovimento);
-		// TODO Auto-generated constructor stub
+
+	public DebuffAtk(Movimento movimento) {
+		super(movimento);
 	}
 	/*
 	 * execute um DeBuff no Atk do pokemon defendendo

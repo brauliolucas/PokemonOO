@@ -2,9 +2,10 @@ package pokemonrandombattle;
 
 public class BuffDef extends Movimento {
 
-	public BuffDef(String[] dadosMovimento) {
-		super(dadosMovimento);
-		// TODO Auto-generated constructor stub
+
+	
+	public BuffDef(Movimento movimento) {
+		super(movimento);
 	}
 	/*
 	 * execute um Buff no Def do pokemon atacante

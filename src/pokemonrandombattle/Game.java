@@ -67,57 +67,57 @@ public class Game {
 				System.out.println("Causou : " + dano +  " de dano em " + defr.getNome());
 				break;
 			case 2: //movimento de cura
-				Cura aux = (Cura) move;
-				dano = aux.executeMove(move, atkr, defr);
-				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+				Cura aux = new Cura(move);
+				dano = aux.executeMove(aux, atkr, defr);
+				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + aux.getNome() );
 				System.out.println(atkr.getNome() + "Se curou em : " + move.getDanoBase());
 				break;
 			case 3: //movimento de buffAtk
-				BuffAtk aux2 = (BuffAtk) move;
-				dano = aux2.executeMove(move, atkr, defr);
-				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+				BuffAtk aux2 =  new BuffAtk(move);
+				dano = aux2.executeMove(aux2, atkr, defr);
+				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + aux2.getNome() );
 				System.out.println(atkr.getNome() + "Aumentou seu Atk");
 				break;
 				
 			case 4: //movimento buffspatk
-				BuffSpAtk aux3 = (BuffSpAtk) move;
-				dano = aux3.executeMove(move, atkr, defr);
-				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+				BuffSpAtk aux3 = new BuffSpAtk(move);
+				dano = aux3.executeMove(aux3, atkr, defr);
+				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + aux3.getNome() );
 				System.out.println(atkr.getNome() + "Aumentou seu SpAtk");
 				break;
 				
 			case 5: //movimento buffdef
-				BuffDef aux4 = (BuffDef) move;
-				dano = aux4.executeMove(move, atkr, defr);
-				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+				BuffDef aux4 = new BuffDef(move);
+				dano = aux4.executeMove(aux4, atkr, defr);
+				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + aux4.getNome() );
 				System.out.println(atkr.getNome() + "Aumentou sua Def");
 				break;
 				
 			case 6: //movimento buffspdef
-				BuffSpDef aux5 = (BuffSpDef) move;
-				dano = aux5.executeMove(move, atkr, defr);
-				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+				BuffSpDef aux5 = new BuffSpDef(move);
+				dano = aux5.executeMove(aux5, atkr, defr);
+				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + aux5.getNome() );
 				System.out.println(atkr.getNome() + "Aumentou sua SpDef");
 				break;
 				
 			case 7: //movimento buffvel
-				BuffVel aux6 = (BuffVel) move;
-				dano = aux6.executeMove(move, atkr, defr);
-				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+				BuffVel aux6 = new BuffVel(move);
+				dano = aux6.executeMove(aux6, atkr, defr);
+				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + aux6.getNome() );
 				System.out.println(atkr.getNome() + "Aumentou sua Vel");
 				break;
 				
 			case 8: //movimento debuffatk
-				DebuffAtk aux7 = (DebuffAtk) move;
-				dano = aux7.executeMove(move, atkr, defr);
-				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+				DebuffAtk aux7 = new DebuffAtk(move);
+				dano = aux7.executeMove(aux7, atkr, defr);
+				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + aux7.getNome() );
 				System.out.println(atkr.getNome() + "Reduziu o Atk de " + defr.getNome());
 				break;
 				
 			case 9: //movimento debuffvel
-				DebuffVel aux8 = (DebuffVel) move;
-				dano = aux8.executeMove(move, atkr, defr);
-				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
+				DebuffVel aux8 = new DebuffVel(move);
+				dano = aux8.executeMove(aux8, atkr, defr);
+				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + aux8.getNome() );
 				System.out.println(atkr.getNome() + "Reduziu a Vel de " + defr.getNome());
 				break;
 			default:

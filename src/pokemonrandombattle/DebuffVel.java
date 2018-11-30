@@ -2,9 +2,9 @@ package pokemonrandombattle;
 
 public class DebuffVel extends Movimento {
 
-	public DebuffVel(String[] dadosMovimento) {
-		super(dadosMovimento);
-		// TODO Auto-generated constructor stub
+
+	public DebuffVel(Movimento movimento) {
+		super(movimento);
 	}
 	/*
 	 * execute um DeBuff no Vel do pokemon defendendo

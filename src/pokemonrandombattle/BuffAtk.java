@@ -2,9 +2,10 @@ package pokemonrandombattle;
 
 public class BuffAtk extends Movimento {
 
-	public BuffAtk(String[] dadosMovimento) {
-		super(dadosMovimento);
-		// TODO Auto-generated constructor stub
+
+	
+	public BuffAtk(Movimento movimento) {
+		super(movimento);
 	}
 	/*
 	 * execute um Buff no Atk do pokemon atacante

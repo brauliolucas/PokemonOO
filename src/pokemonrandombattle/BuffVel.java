@@ -2,11 +2,10 @@ package pokemonrandombattle;
 
 public class BuffVel extends Movimento {
 
-	public BuffVel(String[] dadosMovimento) {
-		super(dadosMovimento);
-		// TODO Auto-generated constructor stub
-	}
 
+	public BuffVel(Movimento movimento) {
+		super(movimento);
+	}
 	/*
 	 * execute um Buff no Vel do pokemon atacante
 	 * @param1 movimento

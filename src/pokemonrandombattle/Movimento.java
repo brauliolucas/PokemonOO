@@ -32,6 +32,13 @@ public class Movimento implements Serializable{
         classe = ManipuladorDeArquivos.strToInt(dadosMovimento[4], nome);
         
     }
+	public Movimento(Movimento movimento) {
+		nome = movimento.getNome();
+        ID = movimento.getId();
+        danoBase = movimento.getDanoBase();
+        tipo = movimento.getTipo();
+        classe = movimento.getClasse();
+	}
 
 	public String getNome() {
 		return nome;

@@ -2,9 +2,9 @@ package pokemonrandombattle;
 
 public class Cura extends Movimento {
 
-	public Cura(String[] dadosMovimento) {
-		super(dadosMovimento);
-		// TODO Auto-generated constructor stub
+
+	public Cura(Movimento movimento) {
+		super(movimento);
 	}
 
 	@Override

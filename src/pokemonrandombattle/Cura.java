@@ -12,7 +12,7 @@ public class Cura extends Movimento {
 		if(atkr.getCurrentHp()+move.getDanoBase()>atkr.getHp())
 			atkr.setCurrentHp(atkr.getHp()); //seta pro hp maximo
 		else
-			atkr.setHp(atkr.getHp()+move.getDanoBase());
+			atkr.setCurrentHp(atkr.getCurrentHp()+move.getDanoBase());
 		return 0;
 	}
 }

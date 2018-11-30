@@ -11,6 +11,7 @@ public class Movimento implements Serializable{
 	private int danoBase;
 	private int tipo;
 	private int classe;
+	private static final long serialVersionUID = 1L;
 	
     public int getDanoBase() {
 		return danoBase;

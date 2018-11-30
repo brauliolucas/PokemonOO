@@ -16,7 +16,7 @@ public class Pokemon implements Serializable{
 	public Tipo tipo2;
 	public Movimento moves[];
     private int ID;
-
+    private int currentHp;
     public Pokemon(String dadosPoke[], int ID) {
         nome = dadosPoke[0];
         moves = new Movimento[4];
@@ -36,6 +36,18 @@ public class Pokemon implements Serializable{
         tipo2 = new Tipo(ManipuladorDeArquivos.strToInt(dadosPoke[12],nome));
         this.ID = ID;
     }
+
+
+    
+	public int getCurrentHp() {
+		return currentHp;
+	}
+
+
+
+	public void setCurrentHp(int currentHp) {
+		this.currentHp = currentHp;
+	}
 
 
 
@@ -73,23 +85,41 @@ public class Pokemon implements Serializable{
 	}
 
 	public void setAtk(int atk) {
-		Atk = atk;
+		if(atk <= 1)
+			this.Atk = 1;
+		else
+			this.Atk = atk;
 	}
+		
 
 	public void setSpAtk(int spAtk) {
-		this.spAtk = spAtk;
+		if(spAtk <= 1)
+			this.spAtk = 1;
+		else
+			this.spAtk = spAtk;
 	}
 
 	public void setDef(int def) {
-		Def = def;
+		if(def <= 1)
+			this.Def = 1;
+		else
+			this.Def = def;
+		
 	}
 
 	public void setSpDef(int spDef) {
-		this.spDef = spDef;
+		if(spDef <=1)
+			this.spDef = 1;
+		else
+			this.spDef = spDef;
+
 	}
 
 	public void setVel(int vel) {
-		this.vel = vel;
+		if(vel <=1)
+			this.vel = 1;
+		else
+			this.vel = vel;
 	}
 
 

@@ -9,6 +9,7 @@ public class Game {
 	Pokemon poke1;
 	Pokemon poke2;
 	
+	
 	/**
 	 * checa se o hp � maior que zero e retorna booleano
 	 * @param1 pokemon1
@@ -17,7 +18,7 @@ public class Game {
 	 * @return booleano, true se hp maior que 0 e false caso contrario
 	 */
 	public boolean checkHP(Pokemon poke1, Pokemon poke2) {
-		if(poke1.getHp() > 0 && poke2.getHp() > 0) {
+		if(poke1.getCurrentHp() > 0 && poke2.getCurrentHp()> 0) {
 			return true;
 			
 		}
@@ -33,7 +34,7 @@ public class Game {
 	 * 
 	 */
 	public void alteraHP(int dano, Pokemon poke) {
-		poke.setHp((poke.getHp()-dano));
+		poke.setCurrentHp((poke.getCurrentHp()-dano));
 	}
 
 	/**
@@ -62,7 +63,7 @@ public class Game {
 		
 		switch(move.getClasse()) {
 			case 1: //movimento de dano
-				dano = move.executeMove(move, atkr, defr);
+				dano = 30*move.executeMove(move, atkr, defr);
 				System.out.println("Pokemon " + atkr.getNome() +  " executou movimento : " + move.getNome() );
 				System.out.println("Causou : " + dano +  " de dano em " + defr.getNome());
 				break;
@@ -138,6 +139,7 @@ public class Game {
 	 * 
 	 */
 	public void battle(Pokemon poke1, Pokemon poke2) {
+
 		while(checkHP(poke1,poke2)) {
 			if(poke1.getVel() > poke2.getVel()) {
 				alteraHP(calculoDano(poke1,poke2),poke2);
@@ -160,7 +162,7 @@ public class Game {
 				alteraHP(calculoDano(poke1,poke2),poke2);
 				if(!checkHP(poke1,poke2)) {
 					vencedor(poke1);
-                                        status(poke1);
+
 					break;
 				}
 			}
@@ -182,6 +184,6 @@ public class Game {
          * @param poke 
          */
         public void status(Pokemon poke){
-            System.out.println("HP: " + poke.getHp());
+            System.out.println("HP: " + poke.getCurrentHp());
         }
 }

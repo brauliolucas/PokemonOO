@@ -2,7 +2,7 @@ package pokemonrandombattle;
 
 public class DebuffVel extends Movimento {
 
-
+	private static final long serialVersionUID = 1L;
 	public DebuffVel(Movimento movimento) {
 		super(movimento);
 	}

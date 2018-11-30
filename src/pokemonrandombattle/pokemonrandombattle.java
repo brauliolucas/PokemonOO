@@ -9,6 +9,8 @@ public class pokemonrandombattle {
 		
 		for (Pokemon poke1 : Dados.pokemons) {
             for (Pokemon poke2 : Dados.pokemons) {
+        		poke1.setCurrentHp(poke1.getHp());
+        		poke2.setCurrentHp(poke2.getHp());
                 jogo.battle(poke1, poke2);
             }
         }

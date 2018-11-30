@@ -2,7 +2,7 @@ package pokemonrandombattle;
 
 public class BuffSpDef extends Movimento {
 
-
+	private static final long serialVersionUID = 1L;
 	public BuffSpDef(Movimento movimento) {
 		super(movimento);
 	}

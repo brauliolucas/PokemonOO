@@ -1,25 +1,26 @@
 package pokemonrandombattle;
+
+import InterfacesGraficas.*;
 import java.util.*;
 import javax.swing.*;
 public class pokemonrandombattle {
 	public static void main(String[] args) {  
 		Dados.Inicializar();
 		
-		
-		
-		
-		String escolha;
+
+                
+		int escolha;
 		do {
-			escolha = JOptionPane.showInputDialog(null,"Escolha uma opção" + "\n" +  "1 : PokeDex" + "\n" + "2 : Batalha" +"\n"+ "0 : Exit");
+			escolha = Integer.parseInt(JOptionPane.showInputDialog(null,"Escolha uma opção" + "\n" +  "1 : PokeDex" + "\n" + "2 : Batalha" +"\n"+ "0 : Exit")); 
 			switch (escolha) {
-				case "0" : 
+				case 0 : 
 					System.exit(0);
-				case "1" : 
+				case 1 : 
 					int id = Integer.parseInt(JOptionPane.showInputDialog("escolha id do pokemon"));
 					Pokemon poke = Dados.pokemons.get(id);
 					PokeDex.showPoke(poke);
 					break;
-				case "2" : 
+				case 2 : 
 					int poke1id = Integer.parseInt(JOptionPane.showInputDialog("escolha id do pokemon 1"));
 					int poke2id = Integer.parseInt(JOptionPane.showInputDialog("escolha id do pokemon 2"));
 					Game jogo = new Game();
@@ -36,7 +37,7 @@ public class pokemonrandombattle {
 					
 				
 			}
-		}while(escolha != "0" && escolha != "1" && escolha != "2");
+		}while(escolha != 0 && escolha != 1 && escolha != 2);
 		
 
 	

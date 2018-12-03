@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import pokemonrandombattle.Game;
 
 /**
  * Frame de escolha dos pokemons
@@ -22,6 +23,7 @@ public class DigitadorNumPoke extends javax.swing.JFrame {
     public DigitadorNumPoke() {
         initComponents();
         jTextArea1.setEditable(false);
+        setResizable(false);
     }
 
     /**
@@ -118,8 +120,8 @@ public class DigitadorNumPoke extends javax.swing.JFrame {
                     
                 }
                 else{
-                    InterfaceBatalha battle = new InterfaceBatalha(num1, num2);
-                    battle.setVisible(true);
+                    Game g1 = new Game();
+                    g1.battle(num1-1, num2-1);
                     dispose();
                 }
             }

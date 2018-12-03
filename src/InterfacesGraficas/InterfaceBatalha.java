@@ -5,18 +5,20 @@
  */
 package InterfacesGraficas;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
-import pokemonrandombattle.ManipuladorDeArquivos;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import pokemonrandombattle.Pokemon;
 
 /**
@@ -24,41 +26,42 @@ import pokemonrandombattle.Pokemon;
  * @author Marcus
  */
 public class InterfaceBatalha extends javax.swing.JFrame {
-    public static int n1;
-    public static int n2;
+
     public String tresDigNum1;
     public String tresDigNum2;
     public ImageIcon logo1;
     public ImageIcon logo2;
-    public Pokemon p1;
-    public Pokemon p2;
+    public static Pokemon p1;
+    public static Pokemon p2;
     public int move1;
     public int move2;
+    public static int ID1;
+    public static int ID2;
     
     /**
      * Creates new form InterfaceBatalha
-     * @param num1 id do pokemon escolhido 1
-     * @param num2 id do pokemon escolhido 2
+     * @param p1 pokemon escolhido 1
+     * @param p2 pokemon escolhido 2
      */
-    public InterfaceBatalha(int num1, int num2) throws IOException, ClassNotFoundException {
+    public InterfaceBatalha(Pokemon p1, Pokemon p2) throws IOException, ClassNotFoundException {
+        InterfaceBatalha.p1 = p1;
+        InterfaceBatalha.p2 = p2;
         move1 = 0;
         move2 = 0;
-        n1 = num1;
-        n2 = num2;
-        tresDigNum1 = criaCaminhoBack(num1);
-        tresDigNum2 = criaCaminhoFront(num2);
-        ArrayList<Pokemon> arrayPoke = ManipuladorDeArquivos.getArrayListDeBinario();
-        p1 = arrayPoke.get(n1-1);
-        p2 = arrayPoke.get(n2-1);
+
+        tresDigNum1 = criaCaminhoBack(InterfaceBatalha.p1.getID());
+        tresDigNum2 = criaCaminhoFront(InterfaceBatalha.p2.getID());
         initComponents();
-         
         jLabel2.setIcon(retornaIcone(tresDigNum1));
         jLabel3.setIcon(retornaIcone(tresDigNum2));
 
         this.getContentPane().setBackground(Color.GREEN);
-        jTextArea1.setLineWrap(false);
-        jTextArea3.setLineWrap(false);
+        jTextArea1.setLineWrap(true);
+        jTextArea3.setLineWrap(true);
         
+        setSize(807, 595);
+        setResizable(false);
+
 
         
     }
@@ -73,11 +76,10 @@ public class InterfaceBatalha extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton9 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabelBackground = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -90,52 +92,58 @@ public class InterfaceBatalha extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        logDeBatalha = new javax.swing.JTextArea();
 
         jButton9.setText("jButton9");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(225, 247, 225));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/InterfacesGraficas/bg1.png"))); // NOI18N
-        jLabel1.setToolTipText("");
+        getContentPane().setLayout(null);
 
         jLabel2.setIcon(logo1);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(50, 170, 90, 70);
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(260, 100, 70, 60);
+
+        jLabelBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/InterfacesGraficas/bg1.png"))); // NOI18N
+        jLabelBackground.setToolTipText("");
+        getContentPane().add(jLabelBackground);
+        jLabelBackground.setBounds(0, 0, 380, 238);
 
         jButton1.setBackground(java.awt.Color.blue);
         jButton1.setForeground(java.awt.Color.white);
-        jButton1.setText(p1.moves[0].getNome());
+        jButton1.setText(p1.moves[2].getNome());
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jTextField1.setEditable(false);
-        jTextField1.setText("Inicia o combate! "+p1.getNome()+" vs "+p2.getNome());
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(550, 60, 250, 25);
 
         jButton2.setBackground(java.awt.Color.blue);
         jButton2.setForeground(java.awt.Color.white);
-        jButton2.setText(p1.moves[0].getNome());
+        jButton2.setText(p1.moves[1].getNome());
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(550, 30, 250, 25);
 
         jButton3.setBackground(java.awt.Color.blue);
         jButton3.setForeground(java.awt.Color.white);
-        jButton3.setText(p1.moves[0].getNome());
+        jButton3.setText(p1.moves[3].getNome());
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(550, 90, 250, 25);
 
         jButton4.setBackground(java.awt.Color.blue);
         jButton4.setForeground(java.awt.Color.white);
@@ -145,6 +153,8 @@ public class InterfaceBatalha extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(550, 0, 250, 25);
 
         jButton5.setBackground(java.awt.Color.yellow);
         jButton5.setText(p2.moves[1].getNome());
@@ -153,6 +163,8 @@ public class InterfaceBatalha extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(550, 150, 250, 25);
 
         jButton6.setBackground(java.awt.Color.yellow);
         jButton6.setText(p2.moves[3].getNome());
@@ -161,6 +173,8 @@ public class InterfaceBatalha extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton6);
+        jButton6.setBounds(550, 210, 250, 25);
 
         jButton7.setBackground(java.awt.Color.yellow);
         jButton7.setText(p2.moves[0].getNome());
@@ -169,6 +183,8 @@ public class InterfaceBatalha extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton7);
+        jButton7.setBounds(550, 120, 250, 25);
 
         jButton8.setBackground(java.awt.Color.yellow);
         jButton8.setText(p2.moves[2].getNome());
@@ -177,15 +193,20 @@ public class InterfaceBatalha extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton8);
+        jButton8.setBounds(550, 180, 250, 25);
 
         jButton10.setBackground(java.awt.Color.red);
         jButton10.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
-        jButton10.setText("Confirmar Jogada!");
+        jButton10.setText("Voltar ao Início");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton10);
+        jButton10.setBounds(390, 100, 150, 30);
+        jButton10.getAccessibleContext().setAccessibleName("Voltar ao Início");
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -195,6 +216,9 @@ public class InterfaceBatalha extends javax.swing.JFrame {
         jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTextArea1);
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(380, 0, 166, 96);
+
         jTextArea3.setEditable(false);
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
@@ -202,77 +226,16 @@ public class InterfaceBatalha extends javax.swing.JFrame {
         jTextArea3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane3.setViewportView(jTextArea3);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(106, 106, 106))
-            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(jLabel2))
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jButton10)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
-                .addComponent(jButton10)
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton7))
-                .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6)
-                    .addComponent(jButton3)))
-        );
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(380, 140, 166, 96);
+
+        logDeBatalha.setBackground(new java.awt.Color(204, 204, 204));
+        logDeBatalha.setColumns(20);
+        logDeBatalha.setRows(5);
+        jScrollPane2.setViewportView(logDeBatalha);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(0, 240, 800, 320);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -309,14 +272,10 @@ public class InterfaceBatalha extends javax.swing.JFrame {
         move2 = 2;
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        if(move1!=0 && move2!=0){
-        
-        }
+        dispose();
+        TelaTitulo t1 = new TelaTitulo();
+        t1.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
@@ -350,7 +309,7 @@ public class InterfaceBatalha extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new InterfaceBatalha(n1, n2).setVisible(true);
+                    new InterfaceBatalha(p1, p2).setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(InterfaceBatalha.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
@@ -371,14 +330,15 @@ public class InterfaceBatalha extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelBackground;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextArea logDeBatalha;
     // End of variables declaration//GEN-END:variables
     /**
      * funcao para criar uma string que tem o caminho para o arquivo de imagem do pokemon 1
@@ -420,5 +380,9 @@ public class InterfaceBatalha extends javax.swing.JFrame {
         }
         System.out.println(tresDig);
         return tresDig;
+    }
+ 
+    public void setLogDeBatalha(String texto){
+        logDeBatalha.setText(texto);
     }
 }

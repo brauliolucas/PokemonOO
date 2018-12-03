@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import pokemonrandombattle.Game;
 
 /**
  *  Tela de titulo do jogo, com as opcoes para jogar com pokes especificos ou randomizados
@@ -22,7 +23,7 @@ public class TelaTitulo extends javax.swing.JFrame {
     public TelaTitulo() {
 
         initComponents();
-        
+        setResizable(false);
     }
 
     /**
@@ -99,19 +100,20 @@ public class TelaTitulo extends javax.swing.JFrame {
         Random gerador = new Random();
         int n1 = 132;
         int n2 = 132;
-        
+        Game jogo = new Game();
         while(n1==132 || n2==132){
             n1 = gerador.nextInt(150);
             n2 = gerador.nextInt(150);
         }
+        
         try {
-            System.out.println(n1+" "+n2);
-            InterfaceBatalha batalha = new InterfaceBatalha(n1+1,n2+1);
-            batalha.setVisible(true);
-            dispose();
-        } catch (IOException | ClassNotFoundException ex) {
+            jogo.battle(n1, n2);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaTitulo.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(TelaTitulo.class.getName()).log(Level.SEVERE, null, ex);
         }
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 /**

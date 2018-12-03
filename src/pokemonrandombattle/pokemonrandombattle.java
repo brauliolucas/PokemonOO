@@ -7,7 +7,7 @@ public class pokemonrandombattle {
 	public static void main(String[] args) {  
 		Dados.Inicializar();
 		
-
+                
                 
 		int escolha;
 		do {
@@ -16,24 +16,18 @@ public class pokemonrandombattle {
 				case 0 : 
 					System.exit(0);
 				case 1 : 
-					int id = Integer.parseInt(JOptionPane.showInputDialog("escolha id do pokemon"));
-					Pokemon poke = Dados.pokemons.get(id);
+					int id = Integer.parseInt(JOptionPane.showInputDialog("Escolha a ID do pokemon"));
+					Pokemon poke = Dados.pokemons.get(id-1);
 					PokeDex.showPoke(poke);
 					break;
 				case 2 : 
-					int poke1id = Integer.parseInt(JOptionPane.showInputDialog("escolha id do pokemon 1"));
-					int poke2id = Integer.parseInt(JOptionPane.showInputDialog("escolha id do pokemon 2"));
-					Game jogo = new Game();
-	            	Pokemon pok1 = new Pokemon(Dados.pokemons.get(poke1id));
-	        		Pokemon pok2 = new Pokemon(Dados.pokemons.get(poke2id));
-	        		pok1.setCurrentHp(pok1.getHp());
-	        		pok2.setCurrentHp(pok2.getHp());
-	        		JOptionPane.showMessageDialog(null, "Batalha entre : " + pok1.getNome() + " e " + pok2.getNome() + "  vai começar!");
-	                jogo.battle(pok1, pok2);
+					TelaTitulo t1 = new TelaTitulo();
+                                        t1.setVisible(true);
+	            	
 	                break;
 	             
 	           default:
-	        	   JOptionPane.showMessageDialog(null,"Opcao errada tente novamente");
+	        	   JOptionPane.showMessageDialog(null,"Opcao errada! Tente novamente");
 					
 				
 			}

@@ -15,12 +15,12 @@ public class Pokemon implements Serializable{
 	public Tipo tipo1;
 	public Tipo tipo2;
 	public Movimento moves[];
-    private int ID;
-    private int currentHp;
+        private int ID;
+        private int currentHp;
     public Pokemon(String dadosPoke[], int ID) {
         nome = dadosPoke[0];
         moves = new Movimento[4];
-        
+        this.ID = ID;
         Hp = ManipuladorDeArquivos.strToInt(dadosPoke[1],nome);
         Atk = ManipuladorDeArquivos.strToInt(dadosPoke[2],nome);
         Def = ManipuladorDeArquivos.strToInt(dadosPoke[3],nome);
@@ -36,6 +36,10 @@ public class Pokemon implements Serializable{
         tipo2 = new Tipo(ManipuladorDeArquivos.strToInt(dadosPoke[12],nome));
         this.ID = ID;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
     
     public Pokemon(Pokemon poke) {
         nome = poke.getNome();
@@ -50,6 +54,7 @@ public class Pokemon implements Serializable{
 
         tipo1 = poke.tipo1;
         tipo2 = poke.tipo2;
+        ID = poke.ID;
     }
 
 
@@ -76,6 +81,10 @@ public class Pokemon implements Serializable{
 	public void setHp(int hp) {
 		Hp = hp;
 	}
+
+        public int getID() {
+            return ID;
+        }
 
 	public int getVel() {
 		return vel;

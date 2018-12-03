@@ -11,7 +11,6 @@ public class Movimento implements Serializable{
 	private int danoBase;
 	private int tipo;
 	private int classe;
-	private static final long serialVersionUID = 1L;
 	
     public int getDanoBase() {
 		return danoBase;
@@ -54,6 +53,23 @@ public class Movimento implements Serializable{
          */
 	public int executeMove(Movimento move, Pokemon atkr, Pokemon defr) {
 		int dano = (int) Math.floor(((move.getDanoBase()*(atkr.getAtk()/defr.getDef())/50)+2)*(defr.tipo1.fraquezas[move.getTipo()]*defr.tipo2.fraquezas[move.getTipo()]));
+                if(dano==0){
+                dano=1;
+                }
+                if(move.classe==1){
+                    if(defr.tipo1.fraquezas[move.getTipo()]==0 || defr.tipo2.fraquezas[move.getTipo()]==0){
+                        dano=0;
+                        Game.logDeBatalha = Game.logDeBatalha + defr.getNome()+" é imune ao golpe "+move.getNome()+"!\n";
+                    }
+                    if(defr.tipo1.fraquezas[move.getTipo()] * defr.tipo2.fraquezas[move.getTipo()]==2) 
+                       {
+                        Game.logDeBatalha = Game.logDeBatalha + "Golpe super efetivo!\n";
+                    }
+                    if(defr.tipo1.fraquezas[move.getTipo()] * defr.tipo2.fraquezas[move.getTipo()]==0.5) {
+                        Game.logDeBatalha = Game.logDeBatalha + "O ataque não foi muito efetivo...\n";
+                    }
+                }
+                
 		return dano;
 	}
 

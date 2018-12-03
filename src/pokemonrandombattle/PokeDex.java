@@ -1,5 +1,6 @@
 package pokemonrandombattle;
 
+import InterfacesGraficas.TelaTitulo;
 import javax.swing.JOptionPane;
 
 public class PokeDex {
@@ -14,7 +15,7 @@ public class PokeDex {
 	 */
 	public static void showPoke(Pokemon poke) {
 		
-		
+		if(poke.getID()!=132){
 		JOptionPane.showMessageDialog(null, "Nome :" + poke.getNome() + "\n" + "HP : " + poke.getHp() + "\n " + "Atk : " + poke.getAtk()+ "\n " +"spAtk : " + poke.getSpAtk()+ "\n " +"Def : " + poke.getDef()
 		+"\n " +"spDef : " + poke.getSpDef()+"\n " +"Vel : " + poke.getVel()	+"\n " +"Tipo 1 : " + poke.tipo1.nome+"\n " +"Tipo 2 : " + poke.tipo2.nome + 
 		"\n " +"Movimentos :" + "\n" + '\n'+  "	Nome : " + poke.moves[0].getNome() + '\n'+"	Dano Base : " + poke.moves[0].getDanoBase() + '\n'+"	Tipo : " + poke.moves[0].getTipo() +
@@ -39,7 +40,11 @@ public class PokeDex {
 				System.out.println("");
 			}
 		}
-		*/
+                */
+                }else{
+                    JOptionPane.showMessageDialog(null, "Ditto nao disponivel nessa versao. Desculpe!","Erro!",JOptionPane.INFORMATION_MESSAGE);
+
+                }			
 		
 	}
 	
@@ -48,3 +53,4 @@ public class PokeDex {
 
 
 }
+

@@ -10,9 +10,9 @@ import java.io.Serializable;
 public class Tipo implements Serializable{
 	
 	
-	 double fraquezas[];
+            protected double fraquezas[];
 	    String nome;
-	    int id;
+	    private int id;
 
 	    public Tipo(int id) {
 	        
@@ -97,4 +97,8 @@ public class Tipo implements Serializable{
 	        }
 	    }	
 
+    public int getId() {
+        return id;
+    }
+            
 }
